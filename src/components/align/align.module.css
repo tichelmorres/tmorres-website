@@ -1,0 +1,36 @@
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+/*
+    A  block  which  is  narrower than the column (a fixed width
+    embed, a table, ...) is not moved by text-align.
+*/
+.center > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
+    margin-inline: auto;
+}
+
+.right > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
+    margin-left: auto;
+}
+
+/*
+    When  an  <Align>  is the first or the last of the page, the
+    margin  of its first or last child would otherwise stick out
+    of it.
+*/
+main > .align:first-child > :first-child {
+    margin-top: 0;
+}
+
+main > .align:last-child > :last-child {
+    margin-bottom: 0;
+}

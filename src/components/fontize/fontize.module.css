@@ -1,0 +1,9 @@
+.fontize {
+    display: contents;
+}
+
+.error {
+    color: var(--ac);
+    font-family: var(--mono);
+    letter-spacing: 0;
+}

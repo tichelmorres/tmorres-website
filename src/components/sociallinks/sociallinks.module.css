@@ -1,0 +1,85 @@
+/*
+    The  dock  is the LAST item of the sidebar (app.module.css).
+    The sidebar is exactly as tall as without the icons, so they
+    can never make it scroll.
+*/
+.dock {
+    order: 1;
+    flex: none;
+    align-self: stretch;
+    height: 0;
+    position: sticky;
+    bottom: 0;
+}
+
+.list {
+    position: absolute;
+    inset: auto 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: var(--space-xs) 0;
+    width: calc(3 * (1.5rem + 2 * var(--space-xs)));
+    margin-inline: auto;
+    list-style: none;
+    background: var(--bg);
+    row-gap: var(--space-xs);
+}
+
+.link {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: var(--space-xs);
+    color: inherit;
+    line-height: 0;
+}
+
+.link:hover {
+    color: var(--hg);
+}
+
+.link:focus-visible {
+    outline: 2px solid var(--ac);
+    outline-offset: -2px;
+}
+
+.icon {
+    width: var(--size, 100%);
+    height: 100%;
+    fill: currentColor;
+}
+
+:global(:root[data-nav="menu"]) .dock {
+    height: auto;
+    background: var(--bg);
+    border-top: 2px solid var(--fg);
+}
+
+:global(:root[data-nav="menu"]) .list {
+    position: static;
+    padding: var(--space-xs) var(--space-s);
+    background: none;
+    width: calc(3 * (1.5rem + 2 * ((var(--menu-button) - 1.5rem) / 2)));
+}
+
+:global(:root[data-nav="menu"]) .link {
+    padding: calc((var(--menu-button) - 1.5rem) / 2);
+    transition:
+        color 0.05s ease,
+        background-color 0.1s ease;
+}
+
+:global(:root[data-nav="menu"]) .link:hover {
+    color: var(--bg);
+    background-color: var(--ot);
+}
+
+:global(:root[data-nav="menu"]) .link:focus-visible {
+    outline-offset: -4px;
+}

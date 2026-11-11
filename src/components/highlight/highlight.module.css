@@ -1,0 +1,176 @@
+.highlightColor {
+    color: var(--hg);
+}
+
+/*
+    wobbly:  letters  jump one after the other.  Each one starts
+    70ms  after  the  previous  one.   For  long  texts the step
+    shrinks  so  that  the last letter starts within 1s.  --i is
+    the index of the letter, --n the number of letters.
+*/
+.word {
+    white-space: nowrap;
+}
+
+/*
+    The letters are inline-block, so they do not get the line of
+    their parents.  They copy it from the variables below, which
+    only <u>, <ins>, <del> and <s> set.  Links do not: a link is
+    underlined only when it is inside a <u> (++[link](/a)++).
+*/
+.letter {
+    display: inline-block;
+    text-decoration-line: var(--deco-underline, ) var(--deco-through, );
+    text-decoration-thickness: var(--deco-thickness, auto);
+}
+
+.space {
+    white-space: pre;
+}
+
+:global(u),
+:global(ins) {
+    --deco-underline: underline;
+    --deco-thickness: 1px;
+}
+
+:global(del),
+:global(s) {
+    --deco-through: line-through;
+}
+
+.hoverWobbly:hover .letter,
+.affectWobbly .letter {
+    animation-name: wobble;
+    animation-duration: 700ms;
+    animation-delay: calc(var(--i) * min(70ms, 1000ms / var(--n)));
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wobble {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.3em);
+    }
+}
+
+/*
+    marked: a tape which grows from nothing to the full width of
+    the  text.
+*/
+.hoverMarked,
+.affectMarked {
+    --tape-height: calc(0.08 * 1lh);
+
+    background-image: linear-gradient(var(--ot), var(--ot));
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.hoverMarked {
+    background-size: 0% var(--tape-height);
+    transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hoverMarked:hover {
+    background-size: 100% var(--tape-height);
+}
+
+.affectMarked {
+    background-size: 100% var(--tape-height);
+    animation: tape 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tape {
+    from {
+        background-size: 0% var(--tape-height);
+    }
+
+    to {
+        background-size: 100% var(--tape-height);
+    }
+}
+
+/*
+    negated:  text  and background colors are swapped.
+*/
+.hoverNegated,
+.affectNegated {
+    border-radius: 0.2em;
+}
+
+.hoverNegated {
+    padding-inline: 0;
+    margin-inline: 0;
+    background-color: transparent;
+    transition:
+        color 0.1s ease,
+        background-color 0.2s ease,
+        padding-inline 0.5s linear,
+        margin-inline 0.5s linear;
+}
+
+.hoverNegated:hover {
+    padding-inline: 0.2em;
+    margin-inline: 0.2em;
+    color: var(--bg);
+    background-color: var(--hg);
+}
+
+.affectNegated {
+    padding-inline: 0.2em;
+    margin-inline: 0.2em;
+    color: var(--bg);
+    background-color: var(--hg);
+    animation:
+        negate-text 0.7s linear both,
+        negate-box 1s linear both;
+}
+
+@keyframes negate-text {
+    from {
+        color: var(--hg);
+    }
+
+    to {
+        color: var(--bg);
+    }
+}
+
+@keyframes negate-box {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: var(--hg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hoverWobbly:hover .letter,
+    .affectWobbly .letter {
+        animation: none;
+    }
+
+    .hoverMarked {
+        transition: none;
+    }
+
+    /* only the colors keep their transition */
+    .hoverNegated {
+        transition:
+            color 0.7s linear,
+            background-color 1s linear;
+    }
+
+    .affectMarked,
+    .affectNegated {
+        animation: none;
+    }
+}

@@ -1,0 +1,104 @@
+/*
+    The  equations  are drawn with Charter (index.css), and with
+    the fonts of KaTeX for what Charter does not have.
+
+    Charter  is declared again below to narrow down what are the
+    digits  needed.  With the plain "Charter" every character it
+    has  would  leave  KaTeX's font, like operators (+ = -), the
+    commas  and  the  parentheses,  which turns out to look very
+    odd.
+*/
+
+@font-face {
+    font-family: 'LaTeX Charter';
+    src: url('../../assets/fonts/charter_web/Charter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A, U+00C0-00D6, U+00D8-00F6, U+00F8-00FF;
+}
+
+@font-face {
+    font-family: 'LaTeX Charter';
+    src: url('../../assets/fonts/charter_web/Charter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A, U+00C0-00D6, U+00D8-00F6, U+00F8-00FF;
+}
+
+@font-face {
+    font-family: 'LaTeX Charter';
+    src: url('../../assets/fonts/charter_web/Charter-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A, U+00C0-00D6, U+00D8-00F6, U+00F8-00FF;
+}
+
+@font-face {
+    font-family: 'LaTeX Charter';
+    src: url('../../assets/fonts/charter_web/Charter-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A, U+00C0-00D6, U+00D8-00F6, U+00F8-00FF;
+}
+
+.latex {
+    letter-spacing: 0;
+    text-indent: 0;
+}
+
+/* digits, \mathrm, \text, \sin... */
+.latex :global(.katex),
+.latex :global(.katex .textrm),
+.latex :global(.katex .mainrm) {
+    font-family: 'LaTeX Charter', KaTeX_Main, 'Times New Roman', serif;
+}
+
+.latex :global(.katex) {
+    font-size: 1.1em;
+}
+
+/* x, y, n... */
+.latex :global(.katex .mathnormal) {
+    font-family: 'LaTeX Charter', KaTeX_Math, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.latex :global(.katex .mathit) {
+    font-family: 'LaTeX Charter', KaTeX_Main, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.latex :global(.katex .mathbf) {
+    font-family: 'LaTeX Charter', KaTeX_Main, 'Times New Roman', serif;
+    font-weight: 700;
+}
+
+.latex :global(.katex .boldsymbol) {
+    font-family: 'LaTeX Charter', KaTeX_Math, 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* <LaTeX block> */
+.block {
+    display: block;
+    max-width: 100%;
+    margin: 0 0 var(--space-m);
+    padding: var(--space-xs) 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.block :global(.katex-display) {
+    margin: 0.5em;
+}
+
+.error {
+    color: var(--ac);
+    font-family: var(--mono);
+    letter-spacing: 0;
+}

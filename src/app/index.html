@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tichelmorres</title>
+        <script>
+            'use strict';
+           /*
+              Apply  the  saved  theme  before the first paint, to avoid a
+              flash  of  the  wrong  one.  The key must match THEME_KEY in
+              src/components/themetoggle/ThemeToggle.tsx.
+           */
+            (function () {
+                try {
+                    var theme = localStorage.getItem('theme');
+                    if (theme === 'light' || theme === 'dark') {
+                        document.documentElement.dataset.theme = theme;
+                    }
+                } catch (error) {
+                    // localStorage may be unavailable
+                }
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/main.tsx"></script>
+    </body>
+</html>

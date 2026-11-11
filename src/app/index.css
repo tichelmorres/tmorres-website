@@ -1,0 +1,371 @@
+@import '@fontsource/noto-sans-jp/500.css';
+@import '@fontsource/noto-sans-jp/700.css';
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-cyrillic-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-cyrillic-ext-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-greek-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-greek-ext-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-latin-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-latin-ext-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-vietnamese-normal.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-cyrillic-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-cyrillic-ext-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-greek-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-greek-ext-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-latin-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-latin-ext-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../assets/fonts/source-code-pro_web/SourceCodePro-vietnamese-italic.woff2") format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: "Libron";
+    src: url("../assets/fonts/libron_web/Libron-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libron";
+    src: url("../assets/fonts/libron_web/Libron-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libron";
+    src: url("../assets/fonts/libron_web/Libron-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libron";
+    src: url("../assets/fonts/libron_web/Libron-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Charter";
+    src: url("../assets/fonts/charter_web/Charter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Charter";
+    src: url("../assets/fonts/charter_web/Charter-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Charter";
+    src: url("../assets/fonts/charter_web/Charter-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Charter";
+    src: url("../assets/fonts/charter_web/Charter-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --fg: light-dark(#221B1B, #F2F2F2);
+    --hg: light-dark(#4A72B0, #F2A5B5);
+    --bg: light-dark(#E7E7E5, #212020);
+    --ac: light-dark(#BB3100, #DFF299);
+    --ot: light-dark(#D5AD28, #84B6C7);
+    --cd: light-dark(#d0d0d0, #2E2D2D);
+
+    --space-xs : 0.25rem;
+    --space-s  : 0.5rem;
+    --space-m  : 1rem;
+    --space-l  : 2rem;
+    --space-xl : 3rem;
+
+    /* maximum width of the layout (sidebar + content) */
+    --app-max-width: 90rem;
+
+    /* minimum height of the footer */
+    --footer-h: 5rem;
+
+    /* size of the menu button and its distance to the edges */
+    --menu-button: 2.75rem;
+    --menu-inset: 0.75rem;
+
+    color-scheme: light dark;
+
+    --serif: 'Libron', 'Charter', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Times New Roman', serif;
+    --vortex: 'Charter', 'Times New Roman', serif;
+    --mono: 'Source Code Pro', ui-monospace, Consolas, monospace;
+
+    font: 18px/145% var(--serif);
+    letter-spacing: 0.18px;
+
+    color: var(--fg);
+    background: var(--bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media (max-width: 1024px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        --space-l: 1.5rem;
+        --space-xl: 2rem;
+    }
+}
+
+/* set by the inline script of index.html and by ThemeToggle */
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+#root {
+    width: 100%;
+    min-height: 100dvh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+}
+
+/* MDX Stuff */
+
+main :is(p, ul, ol, pre, blockquote) {
+    margin: 0 0 var(--space-m);
+}
+
+main :is(h1, h2, h3, h4, h5, h6) {
+    margin: var(--space-l) 0 var(--space-s);
+    line-height: 1.3;
+}
+
+main :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: var(--space-s);
+}
+
+main > button:first-child + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
+}
+
+code, pre, kbd, samp {
+    font-family: var(--mono);
+    font-variant-ligatures: normal;
+    background-color: var(--cd);
+    color: var(--fg);
+    padding: 0px 2px;
+}
+
+main :is(ul, ol) {
+    padding-left: var(--space-l);
+}
+
+main li + li {
+    margin-top: var(--space-xs);
+}
+
+main li > :is(ul, ol) {
+    margin: var(--space-xs) 0 0;
+}
+
+main li > :last-child {
+    margin-bottom: 0;
+}
+
+main blockquote {
+    display: flow-root;
+    padding: var(--space-xs) var(--space-m);
+    border-left: 8px solid var(--cd);
+}
+
+main blockquote > :first-child {
+    margin-top: 0;
+}
+
+main blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+main blockquote blockquote {
+    margin: var(--space-s) 0 0;
+}
+
+main pre {
+    padding: var(--space-m);
+    overflow-x: auto;
+}
+
+main > :first-child {
+    margin-top: 0;
+}
+
+main > :last-child {
+    margin-bottom: 0;
+}
+
+main hr {
+    width: 40%;
+    height: 0;
+    margin: var(--space-xl) auto;
+    overflow: hidden;
+    border: none;
+    border-top: 2px solid var(--fg);
+}
+
+:where(a:any-link) {
+    color: var(--hg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+:where(a:any-link:hover, a:any-link:focus-visible) {
+    color: var(--ac);
+}
+
+:where(a:any-link:active) {
+    color: var(--ot);
+}
+
+main u {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}

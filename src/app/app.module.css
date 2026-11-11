@@ -1,0 +1,147 @@
+.container {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: var(--app-max-width);
+    margin-inline: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/*
+    Groups  the  menu  button  and  the  sidebar  (see App.tsx).
+    Children are laid out as direct children of .container.
+*/
+.menu {
+    display: contents;
+}
+
+.sidebar {
+    box-sizing: border-box;
+    flex: 0 0 15rem;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: calc(100dvh - var(--footer-h));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-xl) var(--space-l);
+    overflow-y: auto;
+    text-align: center;
+}
+
+.sidebar::after {
+    content: '';
+    flex: 0 1 var(--vortex-h, 0px);
+    min-height: 0;
+}
+
+.toggleRow {
+    flex: none;
+    height: var(--vortex-h, 0px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pages {
+    flex: none;
+    margin-block: auto;
+    padding-block: var(--space-l);
+}
+
+.sidebar p {
+    margin: 0 0 var(--space-s);
+}
+
+.sidebar p:last-child {
+    margin-bottom: 0;
+}
+
+.content {
+    box-sizing: border-box;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: var(--space-xl) 0;
+    overflow-x: clip;
+    /*
+       Makes  the  cqw  unit used by the vortex (vortex.module.css)
+       mean  1%  of  the  width of this area, so that the vortex is
+       sized to fit it.
+    */
+    container-type: inline-size;
+    margin-bottom: 0.42em; /* aligned with SocialLinks icons */
+}
+
+.column {
+    width: fit-content;
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+.myage {
+    width: 0;
+    min-width: 100%;
+    margin: 0;
+    overflow-wrap: anywhere;
+    contain: layout style;
+    color: color-mix(in srgb, var(--fg) 55%, var(--bg));
+}
+
+.column > main {
+    width: 0;
+    min-width: 100%;
+    margin-top: var(--space-l);
+}
+
+/*
+    On narrow screens, the sidebar becomes a dropdown card below
+    the menu button (see MenuButton).
+*/
+
+/* room for the menu button above the vortex */
+:global(:root[data-nav="menu"]) .content {
+    padding: calc(var(--menu-inset) + var(--menu-button)) var(--space-m) var(--space-l);
+}
+
+:global(:root[data-nav="menu"]) .sidebar {
+    display: none;
+    position: fixed;
+    align-self: auto;
+    height: auto;
+    z-index: 10;
+    top: calc(var(--menu-inset) + var(--menu-button) + var(--space-s));
+    right: var(--menu-inset);
+    width: min(16rem, calc(100vw - 2 * var(--menu-inset)));
+    max-height: calc(100dvh - 2 * var(--menu-inset) - var(--menu-button) - var(--space-s));
+    padding: 0;
+    align-items: stretch;
+    text-align: right;
+    background: var(--bg);
+    border: 2px solid var(--fg);
+}
+
+:global(:root[data-nav="menu"]) .sidebar.open {
+    display: flex;
+}
+
+:global(:root[data-nav="menu"]) .sidebar::after {
+    display: none;
+}
+
+:global(:root[data-nav="menu"]) .toggleRow {
+    display: block;
+    height: auto;
+}
+
+:global(:root[data-nav="menu"]) .pages {
+    margin: 0;
+    padding: 0;
+}
+
+:global(:root[data-nav="menu"]) .sidebar p {
+    margin: 0;
+}
+

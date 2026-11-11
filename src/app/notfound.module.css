@@ -1,0 +1,71 @@
+.funny,
+.explanation {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+}
+
+.funny {
+    margin-bottom: var(--space-l);
+}
+
+.image {
+    width: min(14rem, 60%);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+:root[data-theme="dark"] {
+    .image {
+        filter: invert(100%);
+    }
+}
+
+.caption {
+    margin: var(--space-m) 0 0;
+    color: color-mix(in srgb, var(--fg) 55%, var(--bg));
+}
+
+.explanation p {
+    max-width: 36rem;
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-s);
+    min-height: 2.75rem;
+    margin: var(--space-s) 0 0;
+    padding: 0 0.75rem;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: inherit;
+    color: var(--bg);
+    background: var(--ac);
+    border: 2px solid var(--ac);
+    border-radius: 0;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.1s ease,
+        border-color 0.2s ease;
+}
+
+.back:hover,
+.back:focus-visible {
+    color: var(--ac);
+    background: var(--bg);
+    border-color: var(--ac);
+}
+
+.credits {
+    margin-top: var(--space-l);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back {
+        transition: none;
+    }
+}

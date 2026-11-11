@@ -1,0 +1,109 @@
+.code {
+    --tok-comment  : light-dark(#4a4a4a, #6D6D6D);
+    --tok-keyword  : light-dark(#8f2400, #DFF299);
+    --tok-string   : light-dark(#14572b, #A5F257);
+    --tok-addition : light-dark(#14572b, #A5F257);
+    --tok-deletion : light-dark(#8f2400, #F2A5B5);
+    --tok-number   : light-dark(#221B1B, #C291F2);
+    --tok-function : light-dark(#221B1B, #F2F2F2);
+    --tok-type     : light-dark(#1b4a8f, #F2A5B5);
+    --tok-meta     : light-dark(#4a4a4a, #6D6D6D);
+
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0 0 var(--space-m);
+    padding: var(--space-m);
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 0.9em;
+    line-height: 1.5;
+    letter-spacing: 0;
+    tab-size: 4;
+    white-space: pre;
+    font-variant-ligatures: none;
+    color: var(--fg);
+    background: var(--cd);
+    border-radius: 0;
+}
+
+.code:focus-visible {
+    outline: 2px solid var(--ac);
+    outline-offset: 2px;
+}
+
+.code code {
+    padding: 0;
+    font: inherit;
+    font-variant-ligatures: inherit;
+    color: inherit;
+    background: none;
+}
+
+.code :global(.hljs-comment),
+.code :global(.hljs-quote) {
+    color: var(--tok-comment);
+}
+
+.code :global(.hljs-keyword),
+.code :global(.hljs-selector-tag),
+.code :global(.hljs-doctag),
+.code :global(.hljs-template-tag),
+.code :global(.hljs-name),
+.code :global(.hljs-tag) {
+    color: var(--tok-keyword);
+}
+
+.code :global(.hljs-addition) {
+    color: var(--tok-addition);
+}
+.code :global(.hljs-deletion) {
+    color: var(--tok-deletion);
+}
+
+.code :global(.hljs-string),
+.code :global(.hljs-regexp),
+.code :global(.hljs-char),
+.code :global(.hljs-meta-string) {
+    color: var(--tok-string);
+}
+
+.code :global(.hljs-number),
+.code :global(.hljs-literal),
+.code :global(.hljs-symbol),
+.code :global(.hljs-bullet),
+.code :global(.hljs-link) {
+    color: var(--tok-number);
+}
+
+.code :global(.hljs-title),
+.code :global(.hljs-section),
+.code :global(.hljs-selector-id),
+.code :global(.hljs-selector-class),
+.code :global(.hljs-selector-attr),
+.code :global(.hljs-selector-pseudo),
+.code :global(.hljs-attr),
+.code :global(.hljs-attribute) {
+    color: var(--tok-function);
+}
+
+.code :global(.hljs-type),
+.code :global(.hljs-built_in),
+.code :global(.hljs-class),
+.code :global(.hljs-variable),
+.code :global(.hljs-template-variable),
+.code :global(.hljs-property) {
+    color: var(--tok-type);
+}
+
+.code :global(.hljs-meta),
+.code :global(.hljs-meta-keyword) {
+    color: var(--tok-meta);
+}
+
+.code :global(.hljs-strong) {
+    font-weight: 700;
+}
+
+.code :global(.hljs-emphasis) {
+    font-style: italic;
+}

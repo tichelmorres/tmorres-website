@@ -1,0 +1,50 @@
+.marginal {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: min(20rem, 40%);
+    text-align: start;
+}
+
+.marginal.left {
+    float: left;
+    clear: left;
+    margin: 0 var(--space-l) var(--space-m) 0;
+}
+
+.marginal.right {
+    float: right;
+    clear: right;
+    margin: 0 0 var(--space-m) var(--space-l);
+}
+
+.marginal > :first-child {
+    margin-top: 0;
+}
+
+.marginal > :last-child {
+    margin-bottom: 0;
+}
+
+.marginal figure {
+    margin: 0 0 var(--space-m);
+}
+
+.marginal figcaption {
+    margin-top: var(--space-s);
+    font-size: 0.9em;
+}
+
+.error {
+    color: var(--ac);
+    font-family: var(--mono);
+    letter-spacing: 0;
+}
+
+@container (max-width: 36rem) {
+    .marginal.left,
+    .marginal.right {
+        float: none;
+        max-width: 100%;
+        margin: 0 auto var(--space-m);
+    }
+}

@@ -1,0 +1,133 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-m);
+}
+
+main .list {
+    padding-left: 0;
+}
+
+main .list > li + li {
+    margin-top: 0;
+}
+
+.card {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    padding: var(--space-m);
+    color: inherit;
+    text-decoration: none;
+    border: 2px solid var(--ot);
+    border-radius: 0;
+    transition: border-color 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+    border-color: var(--ot);
+    background-color: var(--ot);
+    color: var(--bg);
+
+    .title {
+        color: var(--bg);
+    }
+}
+
+.title {
+    margin: 0 0 var(--space-s);
+    font-size: 1.2rem;
+    color: var(--ot);
+    overflow-wrap: anywhere;
+}
+
+.description {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.title:last-child {
+    margin-bottom: 0;
+}
+
+/* "X resultados para ..." above the cards of a search */
+.summary {
+    margin: 0 0 var(--space-m);
+}
+
+.date {
+    margin: 0 0 var(--space-xs);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.75;
+    overflow-wrap: anywhere;
+}
+
+/* what matches the search */
+.card mark {
+    color: var(--ac);
+    background: none;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.go {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    padding-top: var(--space-l);
+}
+
+/* "<- Voltar", above an entry */
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-s);
+    min-height: 2.75rem;
+    margin: 0 0 var(--space-m);
+    padding: 0 0.75rem;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: inherit;
+    color: var(--bg);
+    background: var(--ac);
+    border: 2px solid var(--ac);
+    border-radius: 0;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.1s ease,
+        border-color 0.2s ease;
+}
+
+.back:hover,
+.back:focus-visible {
+    color: var(--ac);
+    background: var(--bg);
+    border-color: var(--ac);
+}
+
+@media (max-width: 600px) {
+    .list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (min-width: 1921px) {
+    .list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .back {
+        transition: none;
+    }
+}

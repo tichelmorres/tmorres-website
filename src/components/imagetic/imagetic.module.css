@@ -1,0 +1,30 @@
+.figure {
+    width: fit-content;
+    margin: 0 0 var(--space-m);
+}
+
+.description {
+    text-align: center;
+    font-weight: 400;
+    color: var(--fg);
+    margin-top: var(--space-m);
+}
+
+.image {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+.rescaled {
+    max-width: 100%;
+}
+
+.rescaledImage {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: fill;
+}

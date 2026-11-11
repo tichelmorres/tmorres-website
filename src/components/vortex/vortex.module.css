@@ -1,0 +1,24 @@
+.vortex {
+    display: block;
+    margin-inline: auto;
+    background-color: transparent;
+    color: var(--ac);
+    font-family: var(--vortex);
+    font-size: clamp(12px, calc(100cqw / 6), 200px);
+    /*
+      bleed  plus  half  a  particle  causes the canvas to have an
+      empty  border  around  the  text  (see  edge in Vortex.tsx).
+      Without  a  correction, the first letter starts to the right
+      of the canvas edge, misaligned with the text of the page.
+
+      0.29em = (bleed + particle / 2) / 200px = (56 + 4 / 2) / 200,
+      
+      with the defaults of Vortex.tsx (if density = 0.56, particle
+      = round(2 / 0.56) = 4px).  0.5px absorbs the rounding of the
+      particle size.
+
+      A  transform  does not change the layout, so the room on the
+      left comes from the padding of .content.
+    */
+    transform: translateX(calc(-0.29em - 0.5px));
+}

@@ -1,0 +1,42 @@
+.form {
+    margin: 0 0 var(--space-m);
+}
+
+.input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: var(--space-s) var(--space-m);
+    font: inherit;
+    letter-spacing: inherit;
+    color: var(--fg);
+    background: var(--bg);
+    border: 2px solid var(--fg);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s ease;
+    appearance: none;
+}
+
+.input::placeholder {
+    color: var(--fg);
+    opacity: 1;
+}
+
+.input:hover {
+    border-color: var(--hg);
+}
+
+.input:focus-visible {
+    border-color: var(--hg);
+}
+
+.input:focus-visible::placeholder {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .input {
+        transition: none;
+    }
+}

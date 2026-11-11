@@ -1,0 +1,67 @@
+.button {
+    display: none;
+}
+
+:global(:root[data-nav="menu"]) .button {
+    --line-height: 2px;
+    --line-gap: 6px;
+
+    position: fixed;
+    z-index: 20;
+    top: var(--menu-inset);
+    right: var(--menu-inset);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--line-gap);
+    width: var(--menu-button);
+    height: var(--menu-button);
+    padding: 0;
+
+    color: var(--fg);
+    background: var(--bg);
+    border: 2px solid currentColor;
+    cursor: pointer;
+}
+
+:global(:root[data-nav="menu"]) .button:hover {
+    color: var(--hg);
+}
+
+:global(:root[data-nav="menu"]) .button:focus-visible {
+    outline: 2px solid var(--ac);
+    outline-offset: 2px;
+}
+
+/* The hamburger lines */
+:global(:root[data-nav="menu"]) .line {
+    display: block;
+    width: 1.5rem;
+    height: 0;
+    border-top: var(--line-height) solid currentColor;
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+/* Close button */
+:global(:root[data-nav="menu"]) .open .line:nth-child(1) {
+    transform: translateY(calc(var(--line-height) + var(--line-gap))) rotate(45deg);
+}
+
+:global(:root[data-nav="menu"]) .open .line:nth-child(2) {
+    opacity: 0;
+}
+
+:global(:root[data-nav="menu"]) .open .line:nth-child(3) {
+    transform: translateY(calc(-1 * (var(--line-height) + var(--line-gap)))) rotate(-45deg);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .line {
+        transition: none;
+    }
+}
