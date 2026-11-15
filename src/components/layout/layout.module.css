@@ -1,0 +1,48 @@
+/*
+    Every  column  is as wide as its widest element, up to the space
+    that  there  is.   When  there  is  less  space  than the widest
+    elements need, the columns share it.
+*/
+.layout {
+    --gap-x: var(--space-l);
+    --gap-y: var(--space-m);
+
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(0, max-content));
+    justify-content: start;
+    align-items: center;
+    column-gap: var(--gap-x);
+    row-gap: var(--gap-y);
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 var(--space-m);
+    text-align: start;
+}
+
+.element {
+    min-width: 0;
+}
+
+.element > :first-child,
+.element p:first-child {
+    margin-top: 0;
+}
+
+.element > :last-child,
+.element p:last-child,
+.element figure {
+    margin-bottom: 0;
+}
+
+.error {
+    color: var(--ac);
+    font-family: var(--mono);
+    letter-spacing: 0;
+}
+
+@container (max-width: 36rem) {
+    .layout {
+        grid-template-columns: minmax(0, max-content);
+    }
+}

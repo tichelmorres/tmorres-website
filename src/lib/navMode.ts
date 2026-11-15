@@ -84,7 +84,17 @@ export function useNavMode(
 
         update();
         window.addEventListener('resize', update);
-        const observer = new ResizeObserver(update);
+        const observer = new ResizeObserver((entries) => {
+            /*
+               While  the  menu  is  in  use, the aside is the dropdown, and it
+               changes  size  every time it opens or closes.  That says nothing
+               about  the sidebar, and measuring it means removing data-nav for
+               a  moment,  which cancels the hamburger transition that has just
+               started.
+            */
+            if (root.dataset.nav === 'menu' && entries.every((entry) => entry.target === aside)) return;
+            update();
+        });
         observer.observe(aside);
         if (watchRef.current) observer.observe(watchRef.current);
         void document.fonts?.ready.then(update);

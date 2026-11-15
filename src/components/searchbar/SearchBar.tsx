@@ -41,7 +41,7 @@ export default function SearchBar({ query, onSearch, onFocus }: SearchBarProps):
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
                 onFocus={onFocus}
-                placeholder="Digite sua busca e pressione Enter"
+                placeholder="Digite sua busca aqui..."
                 aria-label="Pesquisar neste site"
                 enterKeyHint="search"
                 autoComplete="off"

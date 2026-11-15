@@ -10,6 +10,7 @@ import Highlight from '@/components/highlight/Highlight';
 import Imagetic from '@/components/imagetic/Imagetic';
 import Loading from '@/components/loading/Loading';
 import LaTeX from '@/components/latex/LaTeX';
+import Layout from '@/components/layout/Layout';
 import MdxLink from '@/components/link/Link';
 import MenuButton from '@/components/menubutton/MenuButton';
 import Marginal from '@/components/marginal/Marginal';
@@ -31,6 +32,7 @@ const components = {
     Highlight,
     Imagetic,
     LaTeX,
+    Layout,
     Marginal,
     Rescale,
     a: MdxLink,
