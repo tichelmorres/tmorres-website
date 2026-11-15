@@ -13,12 +13,18 @@
 /*
     A  block  which  is  narrower than the column (a fixed width
     embed, a table, ...) is not moved by text-align.
+
+    The  selectors  are  doubled  (.align.center) on purpose: the
+    components  that  reset  the margin of a figure (<Marginal>,
+    for  one) have the same specificity as a single class plus a
+    tag,  and  would win by coming later in the bundle, leaving a
+    narrow image stuck to the left.
 */
-.center > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
+.align.center > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
     margin-inline: auto;
 }
 
-.right > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
+.align.right > :is(div, figure, table, img, iframe, video, embed, object, svg, canvas) {
     margin-left: auto;
 }
 
